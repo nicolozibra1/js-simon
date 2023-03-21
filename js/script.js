@@ -17,9 +17,14 @@ generate.addEventListener('click', function () {
         numbers.push(number);
         }
     }
+    
     console.log(numbers);
-    return numbers;  
+    const boxNumber = document.querySelector('.box-number');
+    boxNumber.innerHTML = `<h1 class="text-white text-center">${numbers}</h1>`;
 });
+
+const result = document.querySelector('.box-result');
+
 
 
 

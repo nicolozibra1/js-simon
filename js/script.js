@@ -21,8 +21,7 @@ generate.addEventListener('click', function () {
     let boxNumber = document.querySelector('.box-number');
     boxNumber.innerHTML = `<h1 class="text-white text-center">${numbers}</h1>`;
     // PRELEVO I NUMERI IN INPUT DEL UTENTE
-    const btnSend = document.getElementById('form');
-    btnSend.addEventListener('submit', function (e){
+    function checkNumber(e) {
         e.preventDefault();
         let inputs = [
             parseInt(document.getElementById('n1').value),
@@ -46,8 +45,20 @@ generate.addEventListener('click', function () {
 
         const boxResult = document.querySelector('.box-result');
         boxResult.innerHTML = `<h1 class="text-center">Hai indovinato <span class="text-danger">${count}</span> numeri. Ecco quali: <span class="text-danger">${userNumber}</span></h1>`
+
+        const restartBox = document.getElementById('box-restart');
+        restartBox.classList.remove('d-none');
+
+    }
+
+        const btnSend = document.getElementById('form');
+        btnSend.addEventListener('submit', checkNumber);
+       
+        const restart = document.getElementById('restart');
+        restart.addEventListener('click', function() {
+            location.reload();
+        });
     });
-});
 
     
 

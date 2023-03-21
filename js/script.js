@@ -3,7 +3,11 @@
 
 // FUNZIONE PER GENERARE I NUMERI
 const generate = document.getElementById('generate');
+let timer = 0;
 generate.addEventListener('click', function () {
+    timer = setTimeout(function () {
+    boxNumber.innerHTML ='';
+    }, 10000);
 
     const numbers = [];
     
@@ -16,7 +20,7 @@ generate.addEventListener('click', function () {
     }
 
     console.log(numbers);
-    const boxNumber = document.querySelector('.box-number');
+    let boxNumber = document.querySelector('.box-number');
     boxNumber.innerHTML = `<h1 class="text-white text-center">${numbers}</h1>`;
 
     const btnSend = document.getElementById('form');

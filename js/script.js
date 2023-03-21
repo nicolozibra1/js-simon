@@ -41,6 +41,9 @@ generate.addEventListener('click', function () {
                 console.log(inputs[i]);
             }
         }
+
+        const boxResult = document.querySelector('.box-result');
+        boxResult.innerHTML = `<h1 class="text-center">Hai indovinato <span class="text-danger">${count}</span> numeri. Ecco quali: <span class="text-danger">${userNumber}</span></h1>`
     });
 });
 
